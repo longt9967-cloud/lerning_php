@@ -1,0 +1,40 @@
+<h>
+    <script lang="javascript">
+        alert("Hello world!");
+    </script>
+</h>
+<body>
+    <button id="btntest" onclick="alert('hello')">xinchao</button>
+</body>
+
+<h>
+    <script lang="javascript" src="demo.js"></script>
+</h>
+<b>
+    <button id="btn">dung an vao day</button>
+    <script>
+        document.getElementById("btn").onmouseover = function() {
+            alert("xin chao cac ban");
+        }
+    </script>
+
+    <button id="btn">dung an vao day</button>
+    <script>
+        document.getElementById("btn").onclick = function() {
+            alert("xin chao cac ban");
+        }
+    </script>
+</b>
+<form id="Myform">
+    <input type="text" id="name" placeholder="Nhap ten"><br><br>
+    <button type="submit" >gui</button>
+    <script>
+        document.getElementById("Myform").addEventListener("submit", function(event) {
+            let name = document.getElementById("name").value;
+            if (name === "") {
+                alert("Vui long nhap ten");
+                event.preventDefault();
+            }
+        });
+    </script>
+</form>

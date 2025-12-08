@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký</title>
+</head>
+<body>
+    <h2>Đăng nhập</h2>
+<form id="myForm">
+    <fieldset>
+        <legend>Đăng nhập</legend>
+        <label>Tên đăng nhập:</label>
+        <input type="text" id="username" ><br><br>
+
+        <label>Mật khẩu:</label>
+        <input type="password" id="password" ><br><br>
+
+        <input type="submit" value="Đăng nhập">
+    </fieldset>
+</form>
+
+<hr>
+<h2>Đăng ký tài khoản!</h2>
+
+<form id="registerForm">
+    <input type="text" id="firstname" placeholder="Tên" >
+    <input type="text" id="lastname" placeholder="Họ đệm" ><br><br>
+
+    <input type="email" id="email" placeholder="Email" >
+    <input type="text" id="phone" placeholder="SĐT"><br><br>
+    
+    <label>Chọn thành phố: </label>
+    <select id="city" >
+        <option disabled selected>Tỉnh</option>
+        <option>Hà Nội</option>
+        <option>Hải Dương</option>
+        <option>Hải Phòng</option>
+        <option>Hà Giang</option>
+        <option>Quảng Ninh</option>
+        <option>Hưng Yên</option>
+        <option>Vĩnh Phúc</option>
+        <option>Phú Thọ</option>
+        <option>Nha Trang</option>
+    </select><br><br>
+
+    <textarea id="note" rows="5" cols="50" placeholder="Ghi chú"></textarea><br><br>
+
+    <button type="submit">Đăng ký</button>
+</form>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        if (username === "" || password === "") {
+            alert("Vui lòng điền đầy đủ thông tin đăng nhập.");
+            event.preventDefault();
+        }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let firstname = document.getElementById("firstname").value;
+        let lastname = document.getElementById("lastname").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let city = document.getElementById("city").value;
+        let note = document.getElementById("note").value;
+
+        if (firstname === "" || lastname === "" || email === "" || city === "") {
+            alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+            return;
+        } 
+
+        console.log("=== THÔNG TIN ĐĂNG KÝ ===");
+        console.log("Họ tên: " + lastname + " " + firstname);
+        console.log("Email: " + email);
+        console.log("Số điện thoại: " + phone);
+        console.log("Địa chỉ: " + city);
+        console.log("Ghi chú: " + note);
+
+        alert("Đăng ký thành công!");
+    });
+</script>
+
+</body>
+</html>
