@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate Đơn Giản</title>
+</head>
+<body>
+
+    <label>Username:</label>
+    <input type="text" id="username">
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password">
+    <br><br>
+
+    <button onclick="kiemTra()">Đăng nhập</button>
+
+    <div id="ket-qua"></div>
+
+    <script>
+        function kiemTra() {
+            // 1. Lấy giá trị
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            var divTB = document.getElementById("ket-qua");
+
+            // 2. Kiểm tra rỗng
+            if (user == "" || pass == "") {
+                // Nếu rỗng -> Báo lỗi chữ đỏ
+                divTB.innerHTML = "Vui lòng nhập đủ thông tin!";
+                divTB.style.color = "red";
+            } else {
+                // Nếu có dữ liệu -> Báo thành công chữ xanh
+                divTB.innerHTML = "Validate thành công";
+                divTB.style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+</html>

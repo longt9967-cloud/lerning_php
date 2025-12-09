@@ -9,7 +9,7 @@
 <body>
     <h1>Bai kiem tra giua ki</h1>
     <?php
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 100; $i++) {
     if ($i % 2 == 0) {
         echo "<span class='chan'>$i</span><br> ";
     } else {
