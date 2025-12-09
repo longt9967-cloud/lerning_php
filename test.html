@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+</head>
+<body>
+
+<h1>Đăng ký tài khoản!</h1>
+<p>Nhập và lựa chọn thông tin đăng ký</p>
+
+<form id="myForm" class="register-form">
+    <div class="form-row">
+        <input type="text" id="firstname" name="firstname" placeholder="Tên">
+        <input type="text" id="lastname" name="lastname" placeholder="Họ đệm">
+    </div>
+
+    <div class="form-row">
+        <input type="text" id="email" name="email" placeholder="Địa chỉ Email">
+        <input type="text" id="phonenumber" name="phonenumber" placeholder="SĐT">
+    </div>
+
+    <label for="city">Chọn thành phố</label>
+    <select id="city" name="city">
+        <option value="" disabled selected>Tỉnh</option>
+        <option value="Hanoi">Hà Nội</option>
+        <option value="HaiDuong">Hải Dương</option>
+        <option value="HaiPhong">Hải Phòng</option>
+        <option value="HaGiang">Hà Giang</option>
+        <option value="QuangNinh">Quảng Ninh</option>
+        <option value="HungYen">Hưng Yên</option>
+        <option value="VinhPhuc">Vĩnh Phúc</option>
+        <option value="PhuTho">Phú Thọ</option>
+        <option value="NhaTrang">Nha Trang</option>
+    </select>
+
+    <textarea id="node" name="node" rows="10" cols="50" placeholder="Ghi chú"></textarea>
+
+    <input type="submit" id="submit" name="dangky" value="Đăng ký">
+</form>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event){
+        event.preventDefault();
+
+        let firstName = document.getElementById("firstname").value.trim();
+        let lastName = document.getElementById("lastname").value.trim();
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phonenumber").value;
+        let city = document.getElementById("city").value;
+        let note = document.getElementById("node").value;
+
+        if(firstName === ""){
+            alert("Vui lòng nhập Tên (Firstname)!");
+            return; 
+        }
+
+        if(lastName === ""){
+            alert("Vui lòng nhập Họ đệm (Lastname)!");
+            return;
+        }
+
+        console.log("firstname: " + firstName);
+        console.log("lastname: "+lastName)
+        console.log("Email: " + email);
+        console.log("Số điện thoại: " + phone);
+        console.log("Thành phố: " + city);
+        console.log("Ghi chú: " + note);
+        alert("Thông tin hợp lệ!");
+    });
+</script>
+</body>
+</html>
